@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login-screen" class="screen">
+    <div class="card">
+      <h1>Tic Tac Toe</h1>
+      <p class="subtitle">Real-time, two players, live sync.</p>
+      <input id="username-input" type="text" placeholder="Enter your name" maxlength="20" />
+      <button id="join-btn">Join Game</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <header>
+      <h1>Tic Tac Toe</h1>
+      <div id="players-bar"></div>
+    </header>
+
+    <p id="status-line">Waiting for another player…</p>
+
+    <div id="board" class="board"></div>
+
+    <button id="reset-btn">Reset Game</button>
+
+    <section id="history-panel">
+      <h2>Recent Games</h2>
+      <ul id="history-list"></ul>
+    </section>
+  </div>
+
+  <div id="winner-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="winner-text"></h2>
+      <p>New game starting shortly…</p>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
